@@ -15,7 +15,7 @@ the edge. Motion is SMIL because GitHub strips <script> from READMEs.
 
 Env vars:
   GITHUB_TOKEN  required — ${{ secrets.GITHUB_TOKEN }} in the Action
-  GH_LOGIN      user to summarise (default: itsfizys)
+  GH_LOGIN      user to summarise (default: itsnacho)
   OUT_DIR       where to write the SVGs (default: repo root)
 """
 import base64
@@ -455,7 +455,7 @@ def main():
     token = os.environ.get("GITHUB_TOKEN")
     if not token:
         sys.exit("GITHUB_TOKEN is not set")
-    login   = os.environ.get("GH_LOGIN", "itsfizys")
+    login   = os.environ.get("GH_LOGIN", "itsnacho")
     out_dir = os.environ.get("OUT_DIR", ".")
 
     s = summarise(fetch(login, token))
